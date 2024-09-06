@@ -13,7 +13,7 @@ This template is modified from [Jean-Pierre Hicke's Format](https://www.overleaf
 ### Edit by Overleaf
 
 1. Download the `Source code.zip` from `releases`
-2. Upload `zip` file in Overleaf blank project
+2. Upload `zip` file in Overleaf's `Upload Project`
 
 
 

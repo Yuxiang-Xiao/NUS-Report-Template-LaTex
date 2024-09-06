@@ -22,7 +22,10 @@ This template is modified from [Jean-Pierre Hicke's Format](https://www.overleaf
 ```
 - 22.Aug.2024
 	- Uploaded the Logo for NUS.
-	- Changed the foot of pages to right. 
+	- Changed the footnote of pages to right. 
+
+- 06.Sept.2024
+	- Aligned the heading of pages to left. 
 
 
 

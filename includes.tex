@@ -116,7 +116,10 @@
 
 \setlength{\headheight}{14.5pt}
 \pagestyle{fancy}
-% I Changed it to make the foot on right
+% make the heading left
+\fancyhead[EL,OL]{\textit{\leftmark}}
+\fancyhead[ER,OR]{}
+% make the foot on right
 \fancyfoot[ER,OR]{\thepage}%Page no. in the left on
                                 %odd pages and on right on even pages
 \fancyfoot[OC,EC]{\sffamily }

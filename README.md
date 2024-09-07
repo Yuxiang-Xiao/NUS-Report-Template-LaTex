@@ -15,7 +15,9 @@ This template is modified from [Jean-Pierre Hicke's Format](https://www.overleaf
 1. Download the `Source code.zip` from `releases`
 2. Upload `zip` file in Overleaf blank project
 
+### Bibliography Style
 
+The reference numbers in the default template are sorted by the first author's last name's initial. If you want to sort them in the order of citation, please add command `\bibliographystyle{unsrt}` after `\usepackage{natbib}` in `includes.tex` file.
 
 ## 📄Update
 

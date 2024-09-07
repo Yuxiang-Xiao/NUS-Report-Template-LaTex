@@ -17,7 +17,7 @@ This template is modified from [Jean-Pierre Hicke's Format](https://www.overleaf
 
 ### Bibliography Style
 
-The reference numbers in the default template are sorted by the first author's last name's initial. If you want to sort them in the order of citation, please add command `\bibliographystyle{unsrt}` after `\usepackage{natbib}` in `includes.tex` file.
+The reference numbers in the default template are sorted by the first author's last name's initial. If you want to sort them in the order of citation, please change command `\bibliographystyle{plain}` to `\bibliographystyle{unsrt}` in `main.tex` file.
 
 ## 📄Update
 

@@ -29,6 +29,9 @@ The reference numbers in the default template are sorted by the first author's l
 - 06.Sept.2024
 	- Aligned the heading of pages to left. 
 
+- 07.Sept.2024
+	- Update `Bibliography Style`
+
 
 
 

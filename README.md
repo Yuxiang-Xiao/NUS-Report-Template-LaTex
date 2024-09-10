@@ -4,9 +4,11 @@
 
 This template is modified from [Jean-Pierre Hicke's Format](https://www.overleaf.com/latex/templates/university-of-waterloo-me303-report-format/fvcvbdbfpmmt) for NUS course project report.
 
-[View Pdf doc here](./NUS_Report_Template.pdf).
+⭐Star my repository if it's useful for you😉
 
-⭐Star my repository if it's useful for u!⭐
+[View PDF doc here](./NUS_Report_Template.pdf).
+
+<img src="./template.png" style="zoom:60%">
 
 ## 🔧Usage
 
@@ -30,7 +32,7 @@ The reference numbers in the default template are sorted by the first author's l
 	- Aligned the heading of pages to left. 
 
 - 07.Sept.2024
-	- Update `Bibliography Style`
+	- Updated the `Usage` of `Bibliography Style`
 
 
 

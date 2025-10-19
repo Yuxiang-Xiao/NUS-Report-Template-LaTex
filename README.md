@@ -17,6 +17,13 @@ This template is modified from [Jean-Pierre Hicke's Format](https://www.overleaf
 
 ⭐ **Star this repository if you find it useful!**
 
+## 📚 Documentation
+
+- **[Quick Start Guide](QUICKSTART.md)** - Get started in minutes
+- **[LaTeX Examples](EXAMPLES.md)** - Common LaTeX code snippets
+- **[Troubleshooting](TROUBLESHOOTING.md)** - Solve common issues
+- **[Contributing Guidelines](CONTRIBUTING.md)** - Help improve the template
+
 ## 📸 Preview
 
 [View the PDF example here](./NUS_Report_Template.pdf)
@@ -110,7 +117,20 @@ To enable the table of contents, uncomment these lines in `main.tex`:
 
 Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
+## 🔄 Continuous Integration
+
+This repository uses GitHub Actions to:
+- **Automatically build** the LaTeX document on every push and pull request
+- **Create releases** automatically when a new version tag is pushed
+- **Validate** that the template compiles correctly
+
+You can see the build status and download compiled artifacts from the [Actions tab](https://github.com/Yuxiang-Xiao/NUS-Report-Template-LaTex/actions).
+
 ## 📄 Changelog
+
+For detailed version history, see [CHANGELOG.md](CHANGELOG.md).
+
+### Recent Updates
 
 ### 2024-09-07
 - Updated the `Usage` section for `Bibliography Style`

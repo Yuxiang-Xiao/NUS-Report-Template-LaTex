@@ -1,0 +1,46 @@
+name: Build LaTeX Document
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      
+    - name: Compile LaTeX document
+      uses: xu-cheng/latex-action@v3
+      with:
+        root_file: main.tex
+        args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
+        
+    - name: Check if PDF was generated
+      run: |
+        if [ -f "main.pdf" ]; then
+          echo "✅ PDF generated successfully"
+          ls -lh main.pdf
+        else
+          echo "❌ PDF generation failed"
+          exit 1
+        fi
+        
+    - name: Upload PDF artifact
+      uses: actions/upload-artifact@v3
+      if: success()
+      with:
+        name: compiled-pdf
+        path: main.pdf
+        retention-days: 7
+        
+    - name: Compare with existing PDF (on PR)
+      if: github.event_name == 'pull_request'
+      run: |
+        echo "Generated PDF size: $(stat -f%z main.pdf 2>/dev/null || stat -c%s main.pdf)"
+        echo "Template builds successfully ✅"

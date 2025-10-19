@@ -1,0 +1,77 @@
+name: Create Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      
+    - name: Create source archive
+      run: |
+        # Create a clean directory for the release
+        mkdir -p release
+        
+        # Copy all template files (exclude .git and other artifacts)
+        rsync -av --exclude='.git' \
+                  --exclude='.github' \
+                  --exclude='release' \
+                  --exclude='*.aux' \
+                  --exclude='*.log' \
+                  --exclude='*.out' \
+                  . release/NUS-Report-Template/
+        
+        # Create the zip file
+        cd release
+        zip -r ../Source-code.zip NUS-Report-Template/
+        cd ..
+        
+    - name: Compile LaTeX document
+      uses: xu-cheng/latex-action@v3
+      with:
+        root_file: main.tex
+        args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
+        
+    - name: Rename PDF
+      run: mv main.pdf NUS_Report_Template.pdf
+      
+    - name: Extract version and notes
+      id: version
+      run: |
+        VERSION=${GITHUB_REF#refs/tags/}
+        echo "version=$VERSION" >> $GITHUB_OUTPUT
+        echo "VERSION: $VERSION"
+        
+    - name: Create Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          Source-code.zip
+          NUS_Report_Template.pdf
+        body: |
+          ## NUS Report Template ${{ steps.version.outputs.version }}
+          
+          ### 📦 Download Options:
+          - **Source-code.zip**: Complete template files for use in Overleaf or local LaTeX editors
+          - **NUS_Report_Template.pdf**: Example compiled PDF
+          
+          ### 🔧 How to Use:
+          1. Download `Source-code.zip`
+          2. Upload to Overleaf or extract locally
+          3. Customize `main.tex` with your project details
+          4. Start writing your report!
+          
+          ### 📖 Documentation:
+          See [README.md](https://github.com/Yuxiang-Xiao/NUS-Report-Template-LaTex) for detailed instructions.
+        draft: false
+        prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

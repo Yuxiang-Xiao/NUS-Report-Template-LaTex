@@ -103,7 +103,7 @@ The repository has been enhanced with comprehensive management tools, documentat
 **Benefits:**
 - Catches compilation errors early
 - Ensures changes don't break the template
-- Provides compiled PDF for every PR
+- Provides compiled PDF as temporary artifact (7 days retention)
 - Validates contributions automatically
 
 #### `.github/workflows/release.yml`
